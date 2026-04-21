@@ -14,5 +14,14 @@ public class PasswordCheckerTest {
         // Assert
         assertFalse(result);
     }
+  @Test
+    void testIsAlphanumeric_ReturnsFalseForSpaces() {
+      // Arrange
+      PasswordChecker checker = new PasswordChecker(5, 10);
+      // Act
+      boolean result = checker.isAlphanumeric("pass word");
+      // Assert
+      assertFalse(result);
+    }
 
 }
