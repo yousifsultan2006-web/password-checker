@@ -47,4 +47,14 @@ public class PasswordCheckerTest {
 
 
     }
+    @Test
+    void testDescribePasswordLengthForMediumPasswords() {
+      // Arrange
+      String expected = "medium";
+      PasswordChecker checker = new PasswordChecker(5, 10);
+      // Act
+      String actual = checker.describePasswordLength("password");
+      // Assert
+      assertEquals(expected, actual);
+    }
 }
