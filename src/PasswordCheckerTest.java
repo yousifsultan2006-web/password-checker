@@ -86,7 +86,16 @@ public class PasswordCheckerTest {
       //Act
       boolean result = checker.isBannedPassword("NotBannedPassword");
 
-      //Arrange
+      //Assert
+      assertFalse(result);
+    }
+    @Test
+    void testIsBannedPasswordsForExtraCharacters() {
+      // Arrange
+      PasswordChecker checker = new PasswordChecker(5, 10);
+      // Act
+      boolean result = checker.isBannedPassword("password123456");
+      // Assert
       assertFalse(result);
     }
 }
