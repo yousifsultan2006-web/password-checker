@@ -57,4 +57,14 @@ public class PasswordCheckerTest {
       // Assert
       assertEquals(expected, actual);
     }
+    @Test
+    void testDescribePasswordLengthForShortPasswords() {
+      // Arrange
+      String expected = "short";
+      PasswordChecker checker = new PasswordChecker(5, 10);
+      // Act
+      String actual = checker.describePasswordLength("pas");
+      // Assert
+      assertEquals(expected, actual);
+    }
 }
