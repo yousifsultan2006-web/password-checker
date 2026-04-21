@@ -67,4 +67,26 @@ public class PasswordCheckerTest {
       // Assert
       assertEquals(expected, actual);
     }
+
+    @Test 
+    void testIsBannedPasswordsForBannedPassword() {
+      //arrange
+      PasswordChecker checker = new PasswordChecker(5, 10);
+      //act
+      boolean result = checker.isBannedPassword("123456");
+      //Assert
+      assertTrue(result);
+
+
+    }
+    @Test 
+    void testIsBannedPasswordsForNonBannedPassword() {
+      //Arrange
+      PasswordChecker checker = new PasswordChecker(5, 10);
+      //Act
+      boolean result = checker.isBannedPassword("NotBannedPassword");
+
+      //Arrange
+      assertFalse(result);
+    }
 }
